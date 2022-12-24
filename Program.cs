@@ -4,8 +4,23 @@
 // исключительно массивами.
 
 
-var gettext = GetAnyArray("Введите элементы массива через пробел");
-Console.WriteLine(String.Join(",", gettext));
+var gettext = GetAnyArray("Введите элементы массива через пробел или запятую");
+Console.Write($"[{String.Join(",", gettext)}] -> ");
+SortArray(gettext);
+
+void SortArray(string[] arr)
+{
+    Console.Write("[ ");
+    for (int i = 0; i < arr.Length; i++)
+    {
+        int num = Convert.ToInt32(arr[i].Length);
+        if (num <= 3)
+        {
+            Console.Write(arr[i] + " ");
+        }
+    }
+    Console.Write("]");
+}
 
 string[] GetAnyArray(string outputText = "", bool inline = false)
 {
@@ -31,3 +46,4 @@ string[] GetAnyArray(string outputText = "", bool inline = false)
 
     return arrays;
 }
+
