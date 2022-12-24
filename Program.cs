@@ -13,8 +13,7 @@ void SortArray(string[] arr)
     Console.Write("[ ");
     for (int i = 0; i < arr.Length; i++)
     {
-        int num = Convert.ToInt32(arr[i].Length);
-        if (num <= 3)
+        if (arr[i].Length <= 3)
         {
             Console.Write(arr[i] + " ");
         }
