@@ -5,7 +5,7 @@
 
 
 var gettext = GetAnyArray("Введите элементы массива через пробел или запятую");
-Console.Write($"[{String.Join(",", gettext)}] -> ");
+Console.Write($"[{String.Join("," , gettext)}] -> ");
 SortArray(gettext);
 
 void SortArray(string[] arr)
@@ -15,7 +15,7 @@ void SortArray(string[] arr)
     {
         if (arr[i].Length <= 3)
         {
-            Console.Write(arr[i] + " ");
+            Console.Write("\"" + arr[i] + "\"" + ",");
         }
     }
     Console.Write("]");
@@ -25,9 +25,9 @@ string[] GetAnyArray(string outputText = "", bool inline = false)
 {
     var arrays = Array.Empty<string>();
     if (inline)
-        Console.Write(outputText);
+        Console.Write("\"" + outputText + "\"");
     else
-        Console.WriteLine(outputText);
+        Console.WriteLine("\"" + outputText + "\"");
     try
     {
         char[] separators = { ' ', ',' };
